@@ -1,0 +1,91 @@
+{
+  "users": [
+    {
+      "name": "carlitos",
+      "surname": "gimenez",
+      "email": "asd@gmail.com",
+      "password": "123456",
+      "role": "ADMINISTRADOR",
+      "token": "bG1Ptx4ZztwJwAoyjxQy",
+      "id": 1
+    },
+    {
+      "name": "silvia",
+      "surname": "gimenez",
+      "email": "test@mail.com",
+      "password": "123456",
+      "role": "USUARIO",
+      "token": "bG1Ptx4ZztwJwAoyjxQU",
+      "id": 2
+    },
+    {
+      "name": "cuetito",
+      "email": "wenitoasd@gmail.com",
+      "password": "123456",
+      "surname": "rodrigues",
+      "role": "ADMINISTRADOR",
+      "token": "YOjedffPYGp8k9bjbUQI",
+      "id": 3
+    },
+    {
+      "name": "jose",
+      "surname": "eduardo",
+      "email": "asdasasd@yahoo.com",
+      "password": "123456",
+      "role": "USUARIO",
+      "token": "THiln4FlNqI45264SZrR",
+      "id": 4
+    }
+  ],
+  "class": [
+    {
+      "name": "Lengua",
+      "description": "Literatura ",
+      "id": 1
+    },
+    {
+      "name": "Historia",
+      "description": "Historia",
+      "id": 2
+    },
+    {
+      "name": "Matematicas ",
+      "description": "Hijo",
+      "id": 3
+    }
+  ],
+  "courses": [
+    {
+      "name": "Curso A",
+      "description": "Curso A",
+      "id": 1
+    },
+    {
+      "name": "Curso B",
+      "description": "Curso B",
+      "id": 2
+    },
+    {
+      "name": "Curso C",
+      "description": "Curso C",
+      "id": 3
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "courseId": 2,
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "courseId": 1,
+      "userId": 2
+    }
+  ]
+}
