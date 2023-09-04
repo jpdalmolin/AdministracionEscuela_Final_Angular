@@ -1,4 +1,7 @@
-TO RUN - 2 RUNS GIT BASH RUN:json-server db.json --watch GIT BASH RUN:ng serve -o
+TO RUN -FIRST- NPM INSTALL. 
+THEN
+2 RUNS 
+GIT BASH RUN:json-server db.json --watch. GIT BASH RUN:ng serve -o
 
 login ADMINISTRATOR User:asd@gmail.com PW:123456       
 login AS USER test@mail.com pw:123456
