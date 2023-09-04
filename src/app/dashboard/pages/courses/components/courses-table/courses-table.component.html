@@ -1,0 +1,48 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let courses"> {{courses.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Curso">
+    <th mat-header-cell *matHeaderCellDef> Curso </th>
+    <td mat-cell *matCellDef="let courses"> {{courses.name }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Descripcion">
+    <th mat-header-cell *matHeaderCellDef> Description</th>
+    <td mat-cell *matCellDef="let courses"> {{courses.description}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Actions">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+    <td mat-cell *matCellDef="let courses">
+      <!-- Paletas angular material
+      - primary
+      - accent
+      - warn
+      -->
+      <button [routerLink]="courses.id" mat-icon-button color="primary">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button [disabled]="!(isAdmin$ | async)" (click)="editCourses.emit(courses)" mat-icon-button color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button [disabled]="!(isAdmin$ | async)" (click)="deleteCourses.emit(courses)" mat-icon-button color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

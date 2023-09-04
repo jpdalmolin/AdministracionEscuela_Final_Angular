@@ -1,0 +1,52 @@
+<mat-stepper class="mat-stepper" linear #stepper>
+  <mat-step color="accent" [hasError]="!firstStepComplete" [completed]="firstStepComplete">
+      <form [formGroup]="inscriptionForm">
+          <ng-template matStepLabel>{{
+            isEditing
+              ? "Editando Inscripcion"
+              : "Creando Inscripcion"
+          }}</ng-template>
+         
+          <mat-button-toggle-group name="toggleGroup"
+              style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; align-items: center; margin-top: 10px;">
+              <mat-button-toggle [value]="course.id" *ngFor="let course of courseOptions$ | async" style="margin-top: 10px; margin-bottom: 10px; margin-right: 15px; height: 100%; width: 100%; display: 
+                      flex; align-items: center;" (change)="onToggleChangeCourse(course)">
+                  
+                  <br>
+                  <small>Curso: {{course.name}} <br>
+                      Comisión: {{course.id}} <br>
+                     
+                  </small>
+              </mat-button-toggle>
+          </mat-button-toggle-group>
+          <div class="btn-form" style="margin-top: 10px;">
+              <button mat-flat-button style="background-color: blue; color: #000;"
+                  matStepperNext>Siguiente</button>
+          </div>
+      </form>
+  </mat-step>
+  <mat-step color="accent" [hasError]="!secondStepComplete" [completed]="secondStepComplete">
+      <form [formGroup]="inscriptionForm">
+          <ng-template matStepLabel>Elegí el alumno</ng-template>
+          
+          <mat-button-toggle-group name="toggleGroup"
+              style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; align-items: center; margin-top: 10px;">
+              <mat-button-toggle *ngFor="let user of userOptions$ | async" style="margin-top: 20px; margin-bottom: 10px; margin-right: 15px; height: 100%; width: 100%; display: 
+                      flex; align-items: center;" (change)="onToggleChangeUser(user)">
+                
+                  <br>
+                  <small>Nombre: {{user.name}} <br>
+                      Apellido: {{user.surname}}<br>
+               
+                  </small>
+              </mat-button-toggle>
+          </mat-button-toggle-group>
+          <div class="btn-form" style="margin-top: 10px;">
+              <button class="btn-previous" mat-flat-button style="background-color:blue; color: #000"
+                  matStepperPrevious>Anterior</button>
+              <button class="btn-next" mat-flat-button style="background-color:blue; color: #000"
+                  (click)="onSubmit()" type="submit">Confirmar</button>
+          </div>
+      </form>
+  </mat-step>
+</mat-stepper>

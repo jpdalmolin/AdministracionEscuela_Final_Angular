@@ -1,0 +1,14 @@
+<mat-toolbar class="flex justify-content-between align-items-center" color="primary">
+  <button
+    (click)="drawer?.toggle()"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span appAgrandado>Administracion de Escuela</span>
+  <p *ngIf="authUser$ | async; let authUser ">
+    {{ authUser?.name }} {{ authUser?.surname }}
+  </p>
+</mat-toolbar>

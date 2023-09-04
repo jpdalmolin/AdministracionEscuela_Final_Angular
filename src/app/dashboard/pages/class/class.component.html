@@ -1,0 +1,11 @@
+<div class="mb-5">
+  <button (click)="onCreateClass()" mat-flat-button color="primary" type="button">
+    <mat-icon>add</mat-icon>
+    Crear clase
+  </button>
+</div>
+<app-class-table
+  [dataSource]="(clase | async) || []"
+  (deleteClass)="onDeleteClass($event)"
+  (editClass)="onEditClass($event)"
+></app-class-table>

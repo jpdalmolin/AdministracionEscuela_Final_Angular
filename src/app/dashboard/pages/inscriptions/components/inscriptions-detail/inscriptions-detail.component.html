@@ -1,0 +1,32 @@
+<ng-container>
+<div>
+        <button routerLink=".." mat-icon-button color="accent">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <mat-card class="example-card" *ngIf="selectedInscription$ | async as inscriptionsData"
+            style="width: 480px; margin: 30px; ">
+            <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 10px;">
+              
+                <div style="margin-left: 20px;">
+                    <mat-card-title style="margin-bottom: 20px;">Curso</mat-card-title>
+                    <mat-card-subtitle style="margin-bottom: 10px;">Nombre:
+                        {{inscriptionsData.course.name}}</mat-card-subtitle>
+                   
+                </div>
+            </div>
+            <hr style="border-color: blue; margin-top: 5px; margin-bottom: 5px;">
+            <mat-card-title style="margin-bottom: 20px; text-align: center;">Alumno</mat-card-title>
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px; text-align: center;">
+                <mat-card-subtitle style="margin-bottom: 10px;">Nombre:
+                    {{inscriptionsData.user.name}}</mat-card-subtitle>
+                <mat-card-subtitle style="margin-bottom: 10px;">Apellido:
+                    {{inscriptionsData.user.surname}}</mat-card-subtitle>
+                <mat-card-subtitle style="margin-bottom: 10px;">Email:
+                    {{inscriptionsData.user.email}}</mat-card-subtitle>
+           
+            </div>
+        </mat-card>
+    </div>
+</ng-container>

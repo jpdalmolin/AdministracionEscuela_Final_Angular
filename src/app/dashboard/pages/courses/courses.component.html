@@ -1,0 +1,11 @@
+<div class="mb-5">
+  <button [disabled]="!(isAdmin$ | async)"  (click)="onCreateCourses()" mat-flat-button color="primary" type="button">
+    <mat-icon>add</mat-icon>
+    Crear curso
+  </button>
+</div>
+<app-courses-table
+  [dataSource]="(courses | async) || []"
+  (deleteCourses)="onDeleteCourses($event)"
+  (editCourses)="onEditCourses($event)"
+></app-courses-table>
